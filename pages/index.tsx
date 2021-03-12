@@ -1,22 +1,24 @@
 import React from "react";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import { useAppContext } from "../shared/AppContext";
+import { navLinks } from "../shared/constants";
 
 export default function Home() {
+  const { navigation } = useAppContext();
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Epsilon Community</title>
-        <link rel="icon" href="/EC-Logo-v2-32.ico" />
-      </Head>
-
-      <main>
-        Main
-      </main>
-
-      <footer className={styles.footer}>
-        Footer
-      </footer>
+    <div>
+      {navLinks.map(link => {
+        return (
+          <div
+            key={link.path}
+            id={link.path}
+            style={{ height: "400px" }}
+            className={`${navigation.current === link.path ? "active" : ""}`}
+          >
+            {link.label}
+          </div>
+        );
+      })}
     </div>
   );
 }
