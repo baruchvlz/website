@@ -24,7 +24,8 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "quotes": 2,
-        "semi": 2
+        "semi": 2,
+        "react/prop-types": "off"
     },
     "settings": {
         "react": {
