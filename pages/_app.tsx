@@ -1,8 +1,8 @@
-import { ElementType } from 'react'
-import '../styles/globals.css'
+import React, { ElementType } from "react";
+import "../styles/globals.css";
 
 function MyApp<P = Record<string, any>>({ Component, pageProps }: { Component: ElementType, pageProps: P }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;

@@ -1,8 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { EpsilonCommunity } from "./../types";
-
-type GameNameRequest = NextApiRequest & { query: { name: EpsilonCommunity.Game } };
+type GameNameRequest = NextApiRequest & { query: { name: string } };
 
 export default function gameNameHanler({ query: { name } }: GameNameRequest, res: NextApiResponse) {
   if (!name) {
